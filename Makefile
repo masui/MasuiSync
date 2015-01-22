@@ -1,7 +1,7 @@
 #
 # Tierraのファイルと「同期」
 #
-.PHONY: movies videos photos music xxxxxx
+.PHONY: movies videos photos music myvideos xxxxxx
 EXCLUDES = --exclude .DS_Store 
 TIERRA = /Volumes/Tierra
 
@@ -12,6 +12,9 @@ movies:
 videos:
 	-rsync -avz $(EXCLUDES) $(TIERRA)/videos .
 	-rsync -avz $(EXCLUDES) videos $(TIERRA)
+myvideos:
+	-rsync -avz $(EXCLUDES) $(TIERRA)/MyVideos .
+	-rsync -avz $(EXCLUDES) MyVideos $(TIERRA)
 photos:
 	-rsync -avz $(EXCLUDES) $(TIERRA)/Photos .
 	-rsync -avz $(EXCLUDES) Photos $(TIERRA)
